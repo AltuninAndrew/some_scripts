@@ -16,7 +16,7 @@ int fib_n(int n)
 		x += y;
 		y = x - y;
 	}
-	return x;
+	return y;
 }
 
  
