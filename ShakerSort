@@ -33,7 +33,7 @@ namespace ConsoleApp5
             WriteArray(array);
 
             Console.WriteLine("Press any key");
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         static void ShakerSort(int[] myint)
