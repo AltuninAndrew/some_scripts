@@ -72,6 +72,5 @@ namespace ConsoleApp5
             Console.WriteLine("\n\nPress any key");
             System.Console.ReadKey();
         }
-
     }
 }
