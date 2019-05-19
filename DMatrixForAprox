@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+
+namespace Rextester
+{  
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            List<double> x = new List<double>() { -10, 8.5, -4.5, -2, 9, 0.5, -2, -3, 5.5, 9, 4 };
+            List<double> y = new List<double>() { 1.1, -9.3, -0.1, -5.5, 2.2, 9.8, 4.9, 1, 5.8, 5.7, -0.9 };
+            double[,] z = new double[3, 3];
+            double[,] t = new double[3, 1];
+            double[,] d = new double[3, 3];
+            const int N = 3;
+
+            for(int i=0;i<N;i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    double ResultSum = 0;
+                    for (int k = 0; k<x.Count; k++)
+                    {
+                        ResultSum += Math.Pow(x[k], i + j);
+                    }
+                    z[i, j] = ResultSum;
+                    Console.WriteLine("z[" + i + "][" + j + "] = " + z[i, j]);
+                }
+            }
+
+            for(int i = 0;i<N;i++)
+            {
+                double ResultSum = 0;
+                for (int k = 0; k < x.Count; k++)
+                {
+                    ResultSum += Math.Pow(x[k], i)*y[k];
+                }
+                t[i, 0] = ResultSum;
+                Console.WriteLine("t[" + i + "][" + 0 + "] = " + t[i, 0]);
+            }
+
+            d[0, 0] = Math.Sqrt(z[0, 0]);
+            d[0, 1] = z[0, 1] / d[0, 0];
+            d[0, 2] = z[0, 2] / d[0, 0];
+            d[1, 1] = Math.Sqrt(z[1, 1] - Math.Pow(d[0,1],2));
+            d[1, 2] = (z[1, 2] - d[0, 1] * d[0, 2]) / d[1, 1];
+            d[2, 2] = Math.Sqrt(z[2, 2] - Math.Pow(d[0, 2], 2) - Math.Pow(d[1, 2], 2));
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.WriteLine("d[" + i + "][" + j + "] = " + d[i, j]);
+                }
+            }
+            Console.ReadKey(); 
+        }  
+
+    }
+}
