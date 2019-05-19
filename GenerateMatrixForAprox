@@ -22,7 +22,7 @@ namespace Rextester
                     double ResultSum = 0;
                     for (int k = 0; k<x.Count; k++)
                     {
-                        ResultSum = Math.Pow(x[k], i + j);
+                        ResultSum += Math.Pow(x[k], i + j);
                     }
                     z[i, j] = ResultSum;
                     Console.WriteLine("Z[" + i + "][" + j + "] = " + z[i, j]);
@@ -35,7 +35,7 @@ namespace Rextester
                 double ResultSum = 0;
                 for (int k = 0; k < x.Count; k++)
                 {
-                    ResultSum = Math.Pow(x[k], i)*y[k];
+                    ResultSum += Math.Pow(x[k], i)*y[k];
                 }
                 t[i, 0] = ResultSum;
                 Console.WriteLine("T[" + i + "][" + 0 + "] = " + t[i, 0]);
