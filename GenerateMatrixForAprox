@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+
+namespace Rextester
+{
+    class Program
+    {
+
+
+        public static void Main(string[] args)
+        {
+            List<double> x = new List<double>() { -10, 8.5, -4.5, -2, 9, 0.5, -2, -3, 5.5, 9, 4 };
+            List<double> y = new List<double>() { 1.1, -9.3, -0.1, -5.5, 2.2, 9.8, 4.9, 1, 5.8, 5.7, -0.9 };
+            double[,] z = new double[2, 2];
+            double[,] t = new double[2, 2];
+            const int N = 2;
+
+            for(int i=0;i<N;i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    double ResultSum = 0;
+                    for (int k = 0; k<x.Count; k++)
+                    {
+                        ResultSum = Math.Pow(x[k], i + j);
+                    }
+                    z[i, j] = ResultSum;
+                    Console.WriteLine("Z[" + i + "][" + j + "] = " + z[i, j]);
+                }
+            }
+            Console.WriteLine("\n");
+
+            for(int i = 0;i<N;i++)
+            {
+                double ResultSum = 0;
+                for (int k = 0; k < x.Count; k++)
+                {
+                    ResultSum = Math.Pow(x[k], i)*y[k];
+                }
+                t[i, 0] = ResultSum;
+                Console.WriteLine("T[" + i + "][" + 0 + "] = " + t[i, 0]);
+            }
+
+            Console.ReadKey(); 
+        }
+       
+
+    }
+}
