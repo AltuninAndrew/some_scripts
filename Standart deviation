@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+namespace Rextester
+{
+    class Program
+    {
+
+       static double  GetValueFromPoly(double x)
+       {
+            return -0.9;
+       }
+
+        public static void Main(string[] args)
+        {
+            List<double> y = new List<double>() { 1.1, -9.3, -0.1, -5.5, 2.2, 9.8, 4.9, 1, 5.8, 5.7, -0.9 };
+            List<double> x = new List<double>() { -10, 8.5, -4.5, -2, 9, 0.5, -2, -3, 5.5, 9, 4 };
+
+            double result = 0;
+
+            for(int i = 0; i<x.Count;i++)
+            {
+                result += Math.Pow(GetValueFromPoly(x[i] - y[i]), 2);
+            }
+
+            result = Math.Sqrt(result / (y.Count) + 1);
+            Console.WriteLine("Standart deviation: " + result);
+            Console.ReadKey(); 
+        }
+       
+
+    }
+}
