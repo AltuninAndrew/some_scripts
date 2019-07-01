@@ -1,2 +1,3 @@
 # some_scripts
-Here are collected different scripts for individual tasks
+Here are collected different scripts for individual tasks in university
+
