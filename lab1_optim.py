@@ -22,8 +22,8 @@ while E>accuracy:
     counter+=1
     print("# ",counter,"================================")
     print("E=" , E)
-    x1=(a+b-accuracy)/2.0
-    x2=(a+b+accuracy)/2.0
+    x1=a+0.381966*(b-a)
+    x2=a+0.618034*(b-a)
     print("a=", a , "  b=" ,b)
     print("x1=",x1,"  x2=",x2)
     print("F(x1)= " , func(x1), "  F(x2)= ",func(x2))
